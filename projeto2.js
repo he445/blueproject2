@@ -33,10 +33,10 @@ for (let i = 0; i != rodadas; ) {
       } else if (opcao == 3) {
         (player = 3), (opcao = "tesoura");
       }
-      console.log(opcao, "vs", resp);
+      console.log("player", opcao, "vs", "pc", resp);
       if (player == 3 && pc == 1) {
         pontos1++, i++;
-      } else if (pc == 3 && pc == 1) {
+      } else if (pc == 3 && player == 1) {
         pontos2++, i++;
       } else if (player < pc) {
         pontos1++, i++;
@@ -56,13 +56,11 @@ for (let i = 0; i != rodadas; ) {
       console.log("empate!");
     }
     console.log("hahaha, isso foi divertido. Deseja jogar de novo?");
-    console.log(i);
     repete = prompt();
     if (repete == "sim") {
-      i = 0;
+      (i = 0), (pontos1 = 0), (pontos2 = 0);
     } else {
       console.log("ok, até mais");
     }
-    console.log(i, repete);
   }
 }
