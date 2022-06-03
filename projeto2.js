@@ -6,6 +6,7 @@ let pc;
 let pontos1 = 0;
 let pontos2 = 0;
 let repete = "sim";
+let opcaoArrey = ["papel", "pedra", "tesoura"];
 for (let i = 0; i != rodadas; ) {
   if (repete == "sim") {
     i = 0;
@@ -14,24 +15,26 @@ for (let i = 0; i != rodadas; ) {
     while (i != rodadas) {
       let resp = Math.floor(3 * Math.random());
       if (resp == 1) {
-        (pc = 1), (resp = "papel");
+        (pc = 1), (resp = opcaoArrey[0]);
       } else if (resp == 2) {
-        (pc = 2), (resp = "pedra");
+        (pc = 2), (resp = opcaoArrey[1]);
       } else if (resp == 0) {
-        (pc = 3), (resp = "tesoura");
+        (pc = 3), (resp = opcaoArrey[2]);
       }
       console.log(`selecione:
 1. papel
 2. pedra
 3. tesoura`);
       let opcao = +prompt();
-
+      if (opcao > 3) {
+        console.log("Ei, sem regras alternavas!"), (opcao = "mãozada de Deus");
+      }
       if (opcao == 1) {
-        (player = 1), (opcao = "papel");
+        (player = 1), (opcao = opcaoArrey[0]);
       } else if (opcao == 2) {
-        (player = 2), (opcao = "pedra");
+        (player = 2), (opcao = opcaoArrey[1]);
       } else if (opcao == 3) {
-        (player = 3), (opcao = "tesoura");
+        (player = 3), (opcao = opcaoArrey[2]);
       }
       console.log("player", opcao, "vs", "pc", resp);
       if (player == 3 && pc == 1) {
