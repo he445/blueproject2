@@ -8,7 +8,7 @@ let pontos2 = 0;
 let repete = "sim";
 let opcaoArrey = ["papel", "pedra", "tesoura"];
 for (let i = 0; i != rodadas; ) {
-  if (repete == "sim") {
+  if (repete.toLowerCase == "sim") {
     i = 0;
     console.log("digite a quantidade de rodadas");
     rodadas = +prompt();
@@ -60,7 +60,7 @@ for (let i = 0; i != rodadas; ) {
     }
     console.log("hahaha, isso foi divertido. Deseja jogar de novo?");
     repete = prompt();
-    if (repete == "sim") {
+    if (repete.toLowerCase() == "sim") {
       (i = 0), (pontos1 = 0), (pontos2 = 0);
     } else {
       console.log("ok, até mais");
